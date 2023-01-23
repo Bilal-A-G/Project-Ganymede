@@ -1,4 +1,4 @@
-# Project-NASA
+# Project-Ganymede
 
 Game overview:
 https://docs.google.com/document/d/1E0AXpjWsRaXpk56zrovzljUF3HSoY5_DIenTJfQnT5w/edit?usp=sharing
