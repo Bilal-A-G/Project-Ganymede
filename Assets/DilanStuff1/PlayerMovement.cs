@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private float HorInput;
 
     private Rigidbody rb;
+    public GameObject deathText;
 
     // Start is called before the first frame update
     void Start()
@@ -40,5 +41,24 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(this.transform.position + this.transform.forward
             * VerInput * Time.deltaTime);
         rb.MoveRotation(rb.rotation * angleR);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.name == "DeathCollector")
+        {
+            StartCoroutine(DeathCall(2));
+        }
+    }
+
+    IEnumerator DeathCall(float seconds)
+    {
+        if (!deathText.activeInHierarchy)
+            deathText.SetActive(true);
+
+        yield return new WaitForSeconds(seconds);
+
+        deathText.SetActive(false);
+        Application.LoadLevel(Application.loadedLevel);
     }
 }
