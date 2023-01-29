@@ -2299,6 +2299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0489141dbddab94aa39399182c8061f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: []
 --- !u!1 &1854215661
 GameObject:
   m_ObjectHideFlags: 0
@@ -2312,7 +2313,7 @@ GameObject:
   - component: {fileID: 1854215663}
   - component: {fileID: 1854215662}
   m_Layer: 7
-  m_Name: Sphere
+  m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

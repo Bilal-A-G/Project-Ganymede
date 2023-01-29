@@ -5,6 +5,9 @@ using UnityEngine;
 public class Pickup : MonoBehaviour
 {
     FOV vision;
+    float dist = float.PositiveInfinity;
+    GameObject obj;
+    public List<string> inventory;
 
     // Start is called before the first frame update
     void Start()
@@ -21,10 +24,17 @@ public class Pickup : MonoBehaviour
             {
                 foreach (Transform item in vision.visibleTargets)
                 {
-
+                    float temp = Vector3.Distance(item.position, transform.position);
+                    if (temp < dist)
+                    {
+                        dist = temp;
+                        obj = item.gameObject;
+                    }
                 }
-                Destroy(vision.visibleTargets[1]);
+                inventory.Add(obj.name);
+                Destroy(obj);
             }
+            dist = float.PositiveInfinity;
         }
     }
 }
