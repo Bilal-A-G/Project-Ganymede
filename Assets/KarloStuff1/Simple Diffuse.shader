@@ -2,6 +2,7 @@ Shader "Custom/Simple Diffuse"
 {
     Properties
     {
+        _Color("Color", Color) = (1.0,1.0,1.0)
         _MainTex("Texture", 2D) = "white" {}
     }
     SubShader
@@ -16,10 +17,11 @@ Shader "Custom/Simple Diffuse"
         };
 
         sampler2D _MainTex;
+        float4 _Color;
 
         void surf(Input IN, inout SurfaceOutput o)
         {
-            o.Albedo = tex2D(_MainTex, IN.uv_MainTex).rgb;
+            o.Albedo = tex2D(_MainTex, IN.uv_MainTex).rgb * _Color.rgb;
         }
         ENDCG
     }
