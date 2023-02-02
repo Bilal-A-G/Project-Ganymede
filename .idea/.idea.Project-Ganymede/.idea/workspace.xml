@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7005ed7c-0ffe-497f-b12b-d26bcbc2e98e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-1.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-1.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-10.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-10.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-10Settings.lighting" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-10Settings.lighting.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-11.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-11.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-11Settings.lighting" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-11Settings.lighting.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-12.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-12.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-12Settings.lighting" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-12Settings.lighting.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-1Settings.lighting" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-1Settings.lighting.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-2.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-2.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-2Settings.lighting" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-2Settings.lighting.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-3.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-3.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-3Settings.lighting" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-3Settings.lighting.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-4.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-4.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-4Settings.lighting" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-4Settings.lighting.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-5.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-5.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-5Settings.lighting" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-5Settings.lighting.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-6.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-6.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-6Settings.lighting" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-6Settings.lighting.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-7.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-7.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-7Settings.lighting" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-7Settings.lighting.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-8.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-8.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-8Settings.lighting" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-8Settings.lighting.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-9.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-9.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-9Settings.lighting" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Example Scenes/sky-9Settings.lighting.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/ReadMe.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/ReadMe.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Material.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Material/sky-1.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Material/sky-1.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Material/sky-10.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Material/sky-10.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Material/sky-11.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Material/sky-11.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Material/sky-12.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Material/sky-12.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Material/sky-2.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Material/sky-2.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Material/sky-3.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Material/sky-3.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Material/sky-4.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Material/sky-4.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Material/sky-5.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Material/sky-5.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Material/sky-6.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Material/sky-6.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Material/sky-7.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Material/sky-7.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Material/sky-8.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Material/sky-8.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Material/sky-9.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Material/sky-9.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/Materials/sky-10.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/Materials/sky-10.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/Materials/sky-11.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/Materials/sky-11.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/Materials/sky-3.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/Materials/sky-3.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/Materials/sky-4.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/Materials/sky-4.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/Materials/sky-7.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/Materials/sky-7.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/Materials/sky-8.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/Materials/sky-8.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/Materials/sky-9.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/Materials/sky-9.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/sky-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/sky-1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/sky-10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/sky-10.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/sky-11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/sky-11.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/sky-12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/sky-12.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/sky-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/sky-2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/sky-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/sky-3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/sky-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/sky-4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/sky-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/sky-5.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/sky-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/sky-6.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/sky-7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/sky-7.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/sky-8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/sky-8.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/sky-9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8K Skybox Pack Free/Skyboxes/Texture/sky-9.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/CameraBehaviour.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/CameraBehaviour.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/DefaultMaterial.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/DefaultMaterial.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/MotionBlur.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/MotionBlur.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/New Material 1.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/New Material 1.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/New Material.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/New Material.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/NormalMap.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/NormalMap.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/PlayerMovement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/PlayerMovement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/ShaderSwitch.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/ShaderSwitch.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/SimpleSpecular.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/SimpleSpecular.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/SimpleSpecular.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/SimpleSpecular.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/Stylized_Stone_Floor_005_ambientOcclusion.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/Stylized_Stone_Floor_005_ambientOcclusion.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/Stylized_Stone_Floor_005_basecolor.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/Stylized_Stone_Floor_005_basecolor.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/Stylized_Stone_Floor_005_normal.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/Stylized_Stone_Floor_005_normal.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/ToonRamp.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/ToonRamp.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/ToonRampMaterial.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DilanStuff1/ToonRampMaterial.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KarloStuff1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KarloStuff1/Camera.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KarloStuff1/Camera.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KarloStuff1/FOV.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KarloStuff1/FOV.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KarloStuff1/Floor.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KarloStuff1/Floor.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KarloStuff1/Lambert.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KarloStuff1/Lambert.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KarloStuff1/Lambert.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KarloStuff1/Lambert.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KarloStuff1/Movement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KarloStuff1/Movement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KarloStuff1/Pickup.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KarloStuff1/Pickup.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KarloStuff1/Player.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KarloStuff1/Player.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KarloStuff1/Simple Diffuse.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KarloStuff1/Simple Diffuse.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KarloStuff1/Simple Diffuse.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KarloStuff1/Simple Diffuse.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BilalAssignment.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BilalAssignment.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DilanAssignment1.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DilanAssignment1.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/KarloAssignment1.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/KarloAssignment1.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Profile.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Profile.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-Balanced-Renderer.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-Balanced-Renderer.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-Balanced.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-Balanced.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-HighFidelity-Renderer.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-HighFidelity-Renderer.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-HighFidelity.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-HighFidelity.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-Performant-Renderer.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-Performant-Renderer.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-Performant.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-Performant.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Documentation.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Sprite Assets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Style Sheets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/TMP Settings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/TMP Settings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro.cginc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro.cginc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2LA5hTnqncm3AtDN2tKFkFMxKuY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Discover.Launch.Via.Unity": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.9f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\OWNER\Project-Ganymede -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\OWNER\Project-Ganymede" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7005ed7c-0ffe-497f-b12b-d26bcbc2e98e" name="Changes" comment="" />
+      <created>1675301169256</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1675301169256</updated>
+      <workItem from="1675301178521" duration="5142000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
