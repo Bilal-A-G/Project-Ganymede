@@ -11,6 +11,7 @@ public class TerrainGenerator : MonoBehaviour
     [SerializeField] private GameObject mediumDetailPrefab;
     [SerializeField] private GameObject lowDetailPrefab;
     [SerializeField] private int renderDistance;
+    [SerializeField] private Material terrainMaterial;
     
     [SerializeField] private int maxSplits;
     [SerializeField] private Transform playerTransform;
@@ -32,6 +33,8 @@ public class TerrainGenerator : MonoBehaviour
         GameObject rootNode = Instantiate(lowDetailPrefab, transform);
         rootNode.transform.localScale = new Vector3(renderDistance, 1, renderDistance);
         SplitQuads(ref rootNode);
+        
+        terrainMaterial.SetVector("_PlayerPosition", new Vector2(playerTransform.position.x, playerTransform.position.z));
     }
 
     void SplitQuads(ref GameObject parentQuad)
@@ -59,15 +62,18 @@ public class TerrainGenerator : MonoBehaviour
             {
                 quadrant = Instantiate(lowDetailPrefab, transform);
             }
-            
+
+            quadrant.GetComponent<MeshRenderer>().bounds =
+                new Bounds(quadrant.transform.position, new Vector3(100000000000000, 100000000000000, 100000000000000));
+
             quadrant.transform.localScale = new Vector3(parentScale.x / 2, 1, parentScale.z / 2);
             quadrant.transform.position = i switch
             {
                 0 => parentPosition +
-                     new Vector3(-quadrant.transform.localScale.x, 0, -quadrant.transform.localScale.z),
-                1 => parentPosition + new Vector3(quadrant.transform.localScale.x, 0, -quadrant.transform.localScale.z),
-                2 => parentPosition + new Vector3(quadrant.transform.localScale.x, 0, quadrant.transform.localScale.z),
-                3 => parentPosition + new Vector3(-quadrant.transform.localScale.x, 0, quadrant.transform.localScale.z),
+                     new Vector3(-quadrant.transform.localScale.x  - 0.1f, 0, -quadrant.transform.localScale.z - 0.1f),
+                1 => parentPosition + new Vector3(quadrant.transform.localScale.x - 0.1f, 0, -quadrant.transform.localScale.z - 0.1f),
+                2 => parentPosition + new Vector3(quadrant.transform.localScale.x - 0.1f, 0, quadrant.transform.localScale.z - 0.1f),
+                3 => parentPosition + new Vector3(-quadrant.transform.localScale.x - 0.1f, 0, quadrant.transform.localScale.z - 0.1f),
                 _ => quadrant.transform.position
             };
 

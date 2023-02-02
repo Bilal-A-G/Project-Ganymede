@@ -70,24 +70,38 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Test:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
     - _BumpScale: 1
+    - _Compensation: 1.62
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _FirstOctaveScale: 2.41
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _HighDetailFade: 0
+    - _HighDetailRange: 0
+    - _MapScale: 1768.6
+    - _MediumDetailFade: 0
+    - _MediumDetailRange: 100000
     - _Metallic: 0
+    - _MinSize: 30.63
     - _Mode: 0
-    - _NormalStrength: 1.87
+    - _NormalStrength: 0.29
     - _OcclusionStrength: 1
+    - _OctaveUVFalloff: 1.31
     - _Parallax: 0.02
-    - _Scale: 0.1
-    - _SecondaryColourLevel: -0.14
+    - _PlaneScale: 5
+    - _Scale: 25.57
+    - _SecondaryColourLevel: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -95,9 +109,10 @@ Material:
     - _WaterLevel: -0.25
     - _ZWrite: 1
     m_Colors:
-    - _BaseColour: {r: 0.3490566, g: 0.08697977, b: 0, a: 0}
+    - _BaseColour: {r: 1, g: 1, b: 1, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _PlayerPosition: {r: 2.48, g: -6.41, b: 0, a: 0}
     - _SecondaryColour: {r: 0.106000006, g: 0.064157896, b: 0.030684208, a: 0}
     - _WaterColour: {r: 0.33962262, g: 0.27305293, b: 0.14546101, a: 0}
   m_BuildTextureStacks: []

@@ -232,7 +232,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &515388961
 MonoBehaviour:
@@ -253,12 +253,13 @@ MonoBehaviour:
   lowDetailPrefab: {fileID: 6949405392149289530, guid: 690a2c6e2d3a7c24eaa817f4ad0eb5f5,
     type: 3}
   renderDistance: 10000
+  terrainMaterial: {fileID: 2100000, guid: c64b9c670428862489037eebfa52582f, type: 2}
   maxSplits: 1000
   playerTransform: {fileID: 1413249638}
   splitThreshold: 20
-  minScale: 5
-  mediumDetailRange: 200
-  highDetailRange: 30
+  minScale: 10
+  mediumDetailRange: 10000
+  highDetailRange: 10
 --- !u!4 &515388962
 Transform:
   m_ObjectHideFlags: 0
@@ -324,7 +325,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 4000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -351,7 +352,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1413249635}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.48, y: 2.796, z: -6.41}
+  m_LocalPosition: {x: 2.48, y: 3.87, z: -6.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
