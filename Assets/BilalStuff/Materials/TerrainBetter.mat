@@ -58,10 +58,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BaseScale: 2.76
+    - _AmbientColour: 0
+    - _AmbientStrength: 0.2
+    - _BaseScale: 3.1
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
+    - _DiffuseStrength: 2.45
     - _DstBlend: 0
     - _EdgeLength: 0.02
     - _FirstOctaveScale: 1
@@ -76,7 +79,7 @@ Material:
     - _MinDist: 1
     - _MinDistance: 0
     - _Mode: 0
-    - _NormalStrength: 0
+    - _NormalStrength: 2.22
     - _OcclusionStrength: 1
     - _OctaveAmplitudeFalloff: 1.8
     - _OctaveScaleFalloff: 0.09
@@ -90,6 +93,9 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.5849056, g: 0.18668681, b: 0.123602666, a: 1}
+    - _AmbientColour: {r: 1, g: 1, b: 1, a: 1}
+    - _AmbientStrength: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.5849056, g: 0.15740754, b: 0.09049479, a: 1}
+    - _Colour: {r: 0.4509804, g: 0.07450981, b: 0.07450981, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

@@ -2,7 +2,10 @@ Shader "Custom/Terrain"
 {
     Properties
     {
-        _Color ("Color", Color) = (1,1,1,1)
+        _Colour ("Colour", Color) = (1,1,1,1)
+        _AmbientStrength ("Ambient Strength", float) = 0.0
+        _DiffuseStrength ("Diffuse Strength", float) = 0.0
+        
         _Tessellation ("Tessellation", float) = 0.0
         
         _MinDistance("Minimum Distance (Tesselation)", float) = 0.0
@@ -24,17 +27,10 @@ Shader "Custom/Terrain"
             Tags { "RenderType"="Opaque" }
             
             CGPROGRAM
-// Upgrade NOTE: excluded shader from DX11; has structs without semantics (struct v2f members uv_MainTex)
-#pragma exclude_renderers d3d11
-            #pragma vertex:disp
-            #pragma tessellate:tess
-            #pragma fragment:frag
             
-            #pragma target 5.0
+            #pragma vertex vert
+            #pragma fragment frag
             
-            #include "Tessellation.cginc"
-            
-            fixed4 _Color;
             float _Tessellation;
             float _MinDistance;
             float _MaxDistance;
@@ -49,7 +45,6 @@ Shader "Custom/Terrain"
                 x = frac(x / 41) * 2 - 1;
                 return normalize(float2(x - floor(x + 0.5), abs(x) - 0.5));
             }
-            
             void Unity_GradientNoise_float(float2 UV, float Scale, out float Out)
             {
                 float2 p = UV * Scale;
@@ -62,13 +57,11 @@ Shader "Custom/Terrain"
                 fp = fp * fp * fp * (fp * (fp * 6 - 15) + 10);
                 Out = lerp(lerp(d00, d01, fp.y), lerp(d10, d11, fp.y), fp.x) + 0.5;
             }
-
             float3 SafeNormalize(float3 inVec)
             {
                 float dp3 = max(1.175494351e-38, dot(inVec, inVec));
                 return inVec * rsqrt(dp3);
             }
-
             float3 TransformWorldToTangent(float3 dirWS, float3x3 tangentToWorld)
             {
                 // Note matrix is in row major convention with left multiplication as it is build on the fly
@@ -91,7 +84,6 @@ Shader "Custom/Terrain"
 
                 return SafeNormalize( sgn * mul(matTBN_I_T, dirWS) );
             }
-
             void Unity_NormalFromHeight_Tangent_float(float In, float Strength, float3 Position, float3x3 TangentMatrix, out float3 Out)
             {
                 float3 worldDerivativeX = ddx(Position);
@@ -109,21 +101,22 @@ Shader "Custom/Terrain"
                 Out = SafeNormalize(TangentMatrix[2].xyz - (Strength * surfGrad));
                 Out = TransformWorldToTangent(Out, TangentMatrix);
             }
-
-            struct v2f
-            {
-                float4 vertex : POSITION;
-                float4 tangent : TANGENT;
-                float3 normal : NORMAL;
-                float2 texcoord : TEXCOORD0;
-            };
-
+            
             struct appdata
             {
                 float4 vertex : POSITION;
-                float4 tangent : TANGENT;
                 float3 normal : NORMAL;
-                float2 texcoord : TEXCOORD0;
+                float4 tangent : TANGENT;
+                float2 uv : TEXCOORD0;
+            };
+
+            struct v2f
+            {
+                float3 normal : TEXCOORD0;
+                float3 objectSpacePosition : TEXCOORD1;
+                float4 tangent : TANGENT;
+
+                float4 vertex : SV_POSITION;
             };
             
             int _Octaves;
@@ -134,7 +127,7 @@ Shader "Custom/Terrain"
             
             float _NormalStrength;
 
-            v2f disp(float4 vertex : POSITION, float3 normal : NORMAL, float4 tangent : TANGENT, float2 uv : TEXCOORD0)
+            v2f vert (appdata IN)
             {
                 v2f output;
                 float displacement = 0.0f;
@@ -142,25 +135,56 @@ Shader "Custom/Terrain"
                 for(int i = 1; i < _Octaves + 1; i++)
                 {
                     float noise = 0.0f;
-                    float4 worldSpaceVertex = mul(unity_ObjectToWorld, output.vertex) /_MapScale;
+                    float4 worldSpaceVertex = mul(unity_ObjectToWorld, IN.vertex) /_MapScale;
                     
                     Unity_GradientNoise_float(float2(worldSpaceVertex.x, worldSpaceVertex.z) * _OctaveUVFalloff, pow(_BaseScale, i + 1), noise);
                     displacement += noise * 1/pow(_BaseScale, i) * _OctaveAmplitudeFalloff;
                 }
                 
-                output.vertex += float4(0, displacement, 0, 0);
+                output.vertex = UnityObjectToClipPos(IN.vertex + float4(0, displacement, 0, 0));
+                output.normal = mul(unity_ObjectToWorld, IN.normal);
+                output.tangent = mul(unity_ObjectToWorld, IN.tangent);
+                output.objectSpacePosition = IN.vertex;
                 return output;
             }
 
-            float4 tess(appdata v0, appdata v1, appdata v2)
-            {
-                return UnityDistanceBasedTess(v0.vertex, v1.vertex, v2.vertex, _MinDistance, _MaxDistance, _Tessellation);
-            }
+            float4 _Colour;
+            float _AmbientStrength;
+            float _DiffuseStrength;
 
-            float4 frag()
+            float4 frag (v2f IN) : SV_Target
             {
-                return float4(1, 1, 1, 1);
+                float displacement = 0.0f;
+                
+                for(int i = 1; i < _Octaves + 1; i++)
+                {
+                    float noise = 0.0f;
+                    float4 worldSpaceVertex = mul(unity_ObjectToWorld, IN.objectSpacePosition) /_MapScale;
+                    
+                    Unity_GradientNoise_float(float2(worldSpaceVertex.x, worldSpaceVertex.z) * _OctaveUVFalloff, pow(_BaseScale, i + 1), noise);
+                    displacement += noise * 1/pow(_BaseScale, i) * _OctaveAmplitudeFalloff;
+                }
+
+                float3 newNormal;
+                float tangentSign = IN.tangent.w * unity_WorldTransformParams.w;
+                float3 wBitangent = cross(IN.normal, IN.tangent) * tangentSign;
+                float3x3 tangentSpaceMatrix = float3x3
+                (
+                    float3(IN.tangent.x, wBitangent.x, IN.normal.x),
+                    float3(IN.tangent.y, wBitangent.y, IN.normal.y),
+                    float3(IN.tangent.z, wBitangent.z, IN.normal.z)
+                );
+
+                Unity_NormalFromHeight_Tangent_float(displacement, _NormalStrength, IN.objectSpacePosition, tangentSpaceMatrix, newNormal);
+
+
+                float3 diffuse = max(0, dot(newNormal, normalize(_WorldSpaceLightPos0)) * _DiffuseStrength);
+                float3 ambient = float3(1, 1, 1) * _AmbientStrength;
+                
+                float3 colour = ambient + diffuse;
+                return float4(colour.rgb * _Colour, 0);
             }
+            
             ENDCG
         }
     }
