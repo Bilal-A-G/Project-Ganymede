@@ -38,9 +38,6 @@
         },
         {
             "m_Id": "9e3066d6f9ad42079e02b7e036862e6f"
-        },
-        {
-            "m_Id": "e72c7bd4ec314e828aaad479b257f01b"
         }
     ],
     "m_Keywords": [],
@@ -3203,8 +3200,8 @@
     },
     "m_FragmentContext": {
         "m_Position": {
-            "x": 0.0,
-            "y": 200.0
+            "x": -0.000005271911504678428,
+            "y": 243.2000274658203
         },
         "m_Blocks": [
             {
@@ -9454,10 +9451,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -3580.800537109375,
+            "x": -3613.599853515625,
             "y": -837.599853515625,
             "width": 128.800048828125,
-            "height": 117.59979248046875
+            "height": 117.59991455078125
         }
     },
     "m_Slots": [
@@ -13067,10 +13064,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -3580.800537109375,
-            "y": -544.7999877929688,
+            "x": -3594.400146484375,
+            "y": -539.9999389648438,
             "width": 125.599853515625,
-            "height": 117.60000610351563
+            "height": 117.5999755859375
         }
     },
     "m_Slots": [
@@ -18763,9 +18760,6 @@
         },
         {
             "m_Id": "9e3066d6f9ad42079e02b7e036862e6f"
-        },
-        {
-            "m_Id": "e72c7bd4ec314e828aaad479b257f01b"
         }
     ]
 }
@@ -20358,33 +20352,6 @@
     "m_PreviewMode": 0,
     "m_CustomColors": {
         "m_SerializableColors": []
-    }
-}
-
-{
-    "m_SGVersion": 1,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
-    "m_ObjectId": "e72c7bd4ec314e828aaad479b257f01b",
-    "m_Guid": {
-        "m_GuidSerialized": "8413218c-bf63-4786-b4ef-196253c67802"
-    },
-    "m_Name": "MinSize",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "MinSize",
-    "m_DefaultReferenceName": "_MinSize",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_Value": 0.0,
-    "m_FloatType": 0,
-    "m_RangeValues": {
-        "x": 0.0,
-        "y": 1.0
     }
 }
 
