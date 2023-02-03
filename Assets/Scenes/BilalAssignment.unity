@@ -279,6 +279,7 @@ GameObject:
   - component: {fileID: 1413249637}
   - component: {fileID: 1413249636}
   - component: {fileID: 1413249639}
+  - component: {fileID: 1413249640}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -366,3 +367,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fogMaterial: {fileID: 2100000, guid: 9fadf41367c26c74886b8903a41ad6f9, type: 2}
   mainCamera: {fileID: 1413249637}
+--- !u!114 &1413249640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413249635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81980d492f64f344da21a5a2a05281af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 50
+  rotationSpeed: 100
+  player: {fileID: 1413249638}
