@@ -21,6 +21,8 @@ Shader "Custom/Terrain"
         _Compensation("Compensation", float) = 0.0
         
         _NormalStrength("Normal Strength", float) = 0.0
+        [HideInInspector]
+        _DoLighting("Do Lighting", int) = 1
     }
     SubShader
     {
@@ -238,6 +240,7 @@ Shader "Custom/Terrain"
             float _AmbientStrength;
             float _DiffuseStrength;
             float _NormalStrength;
+            int _DoLighting;
 
             float4 frag (Interpolators IN) : SV_Target
             {
@@ -270,8 +273,12 @@ Shader "Custom/Terrain"
 
                 float3 diffuse = max(0, dot(newNormal, normalize(_WorldSpaceLightPos0)) * _DiffuseStrength);
                 float3 ambient = float3(1, 1, 1) * _AmbientStrength;
+
+                float3 colour = float4(1, 1, 1, 1);
                 
-                float3 colour = ambient + diffuse;
+                if(_DoLighting == 1)
+                    colour = ambient + diffuse;
+                
                 return float4(colour.rgb * _Colour, 0);
             }
             

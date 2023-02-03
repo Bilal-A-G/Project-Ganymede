@@ -66,6 +66,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DiffuseStrength: 4
+    - _DoLighting: 1
     - _DstBlend: 0
     - _EdgeLength: 100
     - _FirstOctaveScale: 1
