@@ -27,8 +27,10 @@ Shader "Custom/Terrain"
         Pass
         {
             Tags { "RenderType"="Opaque" }
+            Cull Off ZWrite On ZTest Always
             
             CGPROGRAM
+            
             #pragma target 5.0
             
             #pragma vertex vert

@@ -246,11 +246,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c65771bacc48724a9e51e158f29738b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  terrainMaterial: {fileID: 2100000, guid: 44dca943dc7c56f4eb9c430f5e97f5fb, type: 2}
-  playerTransform: {fileID: 1413249638}
   terrainPrefab: {fileID: 7587359572601540531, guid: dc39cbffd2d8c024b884bbdc92fcfadb,
     type: 3}
   chunkSize: 100
+  player: {fileID: 1413249638}
+  chunkUpdateThreshold: 500
   renderDistance: 10
 --- !u!4 &515388962
 Transform:
@@ -259,7 +259,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 515388960}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -278,6 +278,7 @@ GameObject:
   - component: {fileID: 1413249638}
   - component: {fileID: 1413249637}
   - component: {fileID: 1413249636}
+  - component: {fileID: 1413249639}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -351,3 +352,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1413249639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413249635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e40deb0cca746c449b41fbc607ed63e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fogMaterial: {fileID: 2100000, guid: 9fadf41367c26c74886b8903a41ad6f9, type: 2}
+  mainCamera: {fileID: 1413249637}
