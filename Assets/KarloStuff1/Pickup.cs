@@ -8,6 +8,8 @@ public class Pickup : MonoBehaviour
     float dist = float.PositiveInfinity;
     GameObject obj;
     public List<string> inventory;
+    public bool win = false;
+    public float maxItem;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +37,11 @@ public class Pickup : MonoBehaviour
                 Destroy(obj);
             }
             dist = float.PositiveInfinity;
+        }
+
+        if (maxItem == inventory.Count)
+        {
+            win = true;
         }
     }
 }
