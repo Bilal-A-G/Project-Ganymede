@@ -94,7 +94,7 @@ Shader "Unlit/LUT"
                     lut = tex2D(_LUT2, lutPos);
                 }
                  
-                return lerp(col, col * lut, _Contribution);
+                return lerp(col, lut, _Contribution);
             }
             ENDCG
         }
