@@ -6,10 +6,10 @@ Shader "Custom/Terrain"
         _AmbientStrength ("Ambient Strength", float) = 0.0
         _DiffuseStrength ("Diffuse Strength", float) = 0.0
         
-        _Tessellation ("Tessellation", float) = 0.0
+        _Tessellation ("Maximum Tessellation", Range(1, 64)) = 0.0
         
-        _MinDistance("Minimum Distance (Tesselation)", float) = 0.0
-        _MaxDistance("Maximum Distance (Tesselation)", float) = 0.0
+        _MinDistance("Minimum Distance (Tessellation)", float) = 0.0
+        _MaxDistance("Maximum Distance (Tessellation)", float) = 0.0
         
         _Octaves("Octaves", int) = 0
         _OctaveAmplitudeFalloff("Octave Ampliude Falloff", float) = 0.0
@@ -17,6 +17,8 @@ Shader "Custom/Terrain"
         _FirstOctaveScale("First Octave Scale", float) = 0.0
         _BaseScale("Base Scale", Range(2, 5)) = 0.0
         _MapScale("Map Scale", float) = 0.0
+        _HeightScale("Height Scale", float) = 0.0
+        _Compensation("Compensation", float) = 0.0
         
         _NormalStrength("Normal Strength", float) = 0.0
     }
@@ -27,13 +29,12 @@ Shader "Custom/Terrain"
             Tags { "RenderType"="Opaque" }
             
             CGPROGRAM
+            #pragma target 5.0
             
             #pragma vertex vert
+            #pragma hull hull
+            #pragma domain domain
             #pragma fragment frag
-            
-            float _Tessellation;
-            float _MinDistance;
-            float _MaxDistance;
 
             float2 Unity_GradientNoise_Dir_float(float2 p)
             {
@@ -112,11 +113,81 @@ Shader "Custom/Terrain"
 
             struct v2f
             {
-                float3 normal : TEXCOORD0;
-                float3 objectSpacePosition : TEXCOORD1;
+                float3 normal : NORMAL;
+                float4 positionOS : TEXCOORD1;
                 float4 tangent : TANGENT;
 
-                float4 vertex : SV_POSITION;
+                float4 positionCS : SV_POSITION;
+            };
+            
+            struct TesselationControlPoints
+            {
+                float3 normal : NORMAL;
+                float4 tangent : TANGENT;
+                float4 positionOS : INTERNALTESSPOS;
+            };
+
+            TesselationControlPoints vert (appdata IN)
+            {
+                TesselationControlPoints output;
+                
+                output.normal = mul(unity_ObjectToWorld, IN.normal);
+                output.tangent = mul(unity_ObjectToWorld, IN.tangent);
+                output.positionOS = IN.vertex;
+                return output;
+            }
+            
+            [UNITY_domain("tri")]
+            [UNITY_outputcontrolpoints(3)]
+            [UNITY_outputtopology("triangle_cw")]
+            [UNITY_partitioning("fractional_odd")]
+            [UNITY_patchconstantfunc("patchFunction")]
+            TesselationControlPoints hull(InputPatch<TesselationControlPoints, 3> patch, uint id : SV_OutputControlPointID)
+            {
+                return patch[id];
+            }
+
+            struct TesselationFactors
+            {
+                float edge[3] : SV_TessFactor;
+                float inside : SV_InsideTessFactor;
+            };
+
+            float _Tessellation;
+            float _MinDistance;
+            float _MaxDistance;
+
+            float GetEdgeFactor(TesselationControlPoints cp0, TesselationControlPoints cp1)
+            {
+                float4 p0 = mul(unity_ObjectToWorld, cp0.positionOS);
+                float4 p1 = mul(unity_ObjectToWorld, cp1.positionOS);
+                
+                float edgeDistanceToCamera = (distance(p0, _WorldSpaceCameraPos) + distance(p1, _WorldSpaceCameraPos))/2;
+                float interpolator = edgeDistanceToCamera/_MaxDistance;
+                interpolator = clamp(interpolator, 0, 1);
+
+                float lerp = (1 - interpolator) * _Tessellation + interpolator;
+                return lerp;
+            }
+
+            TesselationFactors patchFunction(InputPatch<TesselationControlPoints, 3> patch)
+            {
+                TesselationFactors factors;
+                
+                factors.edge[0] = GetEdgeFactor(patch[1], patch[2]);
+                factors.edge[1] = GetEdgeFactor(patch[2], patch[0]);
+                factors.edge[2] = GetEdgeFactor(patch[0], patch[1]);
+                factors.inside = (factors.edge[0] + factors.edge[1] + factors.edge[2]) * 0.33f;
+                
+                return factors;
+            }
+
+            struct Interpolators
+            {
+                float3 normal : NORMAL;
+                float4 positionOS : TEXCOORD0;
+                float4 tangent : TANGENT;
+                float4 positionCS : SV_POSITION;
             };
             
             int _Octaves;
@@ -124,47 +195,52 @@ Shader "Custom/Terrain"
             float _OctaveUVFalloff;
             float _BaseScale;
             float _MapScale;
+            float _Compensation;
+            float _HeightScale;
             
-            float _NormalStrength;
-
-            v2f vert (appdata IN)
+            [UNITY_domain("tri")]
+            Interpolators domain(TesselationFactors factors, OutputPatch<TesselationControlPoints, 3> patch,
+                float3 barycentricCoordinates : SV_DomainLocation)
             {
-                v2f output;
+                Interpolators output;
+                
+                output.normal = patch[0].normal * barycentricCoordinates.x +
+                        patch[1].normal * barycentricCoordinates.y +
+                        patch[2].normal * barycentricCoordinates.z;
+
+                output.tangent = patch[0].tangent * barycentricCoordinates.x +
+                        patch[1].tangent * barycentricCoordinates.y +
+                        patch[2].tangent * barycentricCoordinates.z;
+                
+                output.positionOS = patch[0].positionOS * barycentricCoordinates.x +
+                        patch[1].positionOS * barycentricCoordinates.y +
+                        patch[2].positionOS * barycentricCoordinates.z;
+                
                 float displacement = 0.0f;
                 
                 for(int i = 1; i < _Octaves + 1; i++)
                 {
                     float noise = 0.0f;
-                    float4 worldSpaceVertex = mul(unity_ObjectToWorld, IN.vertex) /_MapScale;
+                    float4 worldSpaceVertex = mul(unity_ObjectToWorld, output.positionOS) /_MapScale;
                     
                     Unity_GradientNoise_float(float2(worldSpaceVertex.x, worldSpaceVertex.z) * _OctaveUVFalloff, pow(_BaseScale, i + 1), noise);
                     displacement += noise * 1/pow(_BaseScale, i) * _OctaveAmplitudeFalloff;
                 }
+
+                displacement = displacement * _HeightScale - _Compensation;
                 
-                output.vertex = UnityObjectToClipPos(IN.vertex + float4(0, displacement, 0, 0));
-                output.normal = mul(unity_ObjectToWorld, IN.normal);
-                output.tangent = mul(unity_ObjectToWorld, IN.tangent);
-                output.objectSpacePosition = IN.vertex;
+                output.positionCS = UnityObjectToClipPos(output.positionOS + float4(0, displacement, 0, 0));
+                
                 return output;
             }
 
             float4 _Colour;
             float _AmbientStrength;
             float _DiffuseStrength;
+            float _NormalStrength;
 
-            float4 frag (v2f IN) : SV_Target
+            float4 frag (Interpolators IN) : SV_Target
             {
-                float displacement = 0.0f;
-                
-                for(int i = 1; i < _Octaves + 1; i++)
-                {
-                    float noise = 0.0f;
-                    float4 worldSpaceVertex = mul(unity_ObjectToWorld, IN.objectSpacePosition) /_MapScale;
-                    
-                    Unity_GradientNoise_float(float2(worldSpaceVertex.x, worldSpaceVertex.z) * _OctaveUVFalloff, pow(_BaseScale, i + 1), noise);
-                    displacement += noise * 1/pow(_BaseScale, i) * _OctaveAmplitudeFalloff;
-                }
-
                 float3 newNormal;
                 float tangentSign = IN.tangent.w * unity_WorldTransformParams.w;
                 float3 wBitangent = cross(IN.normal, IN.tangent) * tangentSign;
@@ -175,7 +251,21 @@ Shader "Custom/Terrain"
                     float3(IN.tangent.z, wBitangent.z, IN.normal.z)
                 );
 
-                Unity_NormalFromHeight_Tangent_float(displacement, _NormalStrength, IN.objectSpacePosition, tangentSpaceMatrix, newNormal);
+                float displacement = 0.0f;
+                
+                for(int i = 1; i < _Octaves + 1; i++)
+                {
+                    float noise = 0.0f;
+                    float4 worldSpaceVertex = mul(unity_ObjectToWorld, IN.positionOS) /_MapScale;
+                    
+                    Unity_GradientNoise_float(float2(worldSpaceVertex.x, worldSpaceVertex.z) * _OctaveUVFalloff, pow(_BaseScale, i + 1), noise);
+                    displacement += noise * 1/pow(_BaseScale, i) * _OctaveAmplitudeFalloff;
+                }
+
+                displacement = displacement * _HeightScale - _Compensation;
+
+                Unity_NormalFromHeight_Tangent_float(displacement,
+                    _NormalStrength, IN.positionOS, tangentSpaceMatrix, newNormal);
 
 
                 float3 diffuse = max(0, dot(newNormal, normalize(_WorldSpaceLightPos0)) * _DiffuseStrength);

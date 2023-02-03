@@ -282,7 +282,6 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../../Program Files/Unity/Hub/Editor/2021.3.9f1/Editor/Data/CGIncludes/Tessellation.cginc" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/BilalStuff/Shaders/Test.shader" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.15/Rider/Editor/RiderScriptEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@12.1.7/ShaderLibrary/Common.hlsl" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@12.1.7/ShaderLibrary/Macros.hlsl" root0="SKIP_HIGHLIGHTING" />
@@ -351,7 +350,7 @@
       <workItem from="1675347245744" duration="6025000" />
       <workItem from="1675359168313" duration="9850000" />
       <workItem from="1675369132270" duration="1794000" />
-      <workItem from="1675375969036" duration="4019000" />
+      <workItem from="1675375969036" duration="17724000" />
     </task>
     <servers />
   </component>

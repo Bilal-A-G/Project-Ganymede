@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class TerrainGenerator : MonoBehaviour
 {
-    [SerializeField] private Material terrainMaterial;
-    [SerializeField] private Transform playerTransform;
     [SerializeField] private GameObject terrainPrefab;
     [SerializeField] private float chunkSize;
 
@@ -24,14 +22,16 @@ public class TerrainGenerator : MonoBehaviour
                 instantiatedTerrain.transform.position = new Vector3((i - renderDistance) * chunkSize * 2, 0, 
                     (j - renderDistance) * chunkSize * 2);
                 instantiatedTerrain.transform.localScale = new Vector3(chunkSize, 1, chunkSize);
-        
+                instantiatedTerrain.GetComponent<MeshFilter>().mesh.bounds = new Bounds(
+                    instantiatedTerrain.transform.position,
+                    new Vector3(100000000, 100000000, 100000000));
             }
         }
     }
 
     private void Update()
     {
-        terrainMaterial.SetVector("_PlayerPosition", new Vector2(playerTransform.position.x, playerTransform.position.z));
+        
     }
 }
 

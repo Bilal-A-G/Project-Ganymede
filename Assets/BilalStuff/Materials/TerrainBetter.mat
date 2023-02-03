@@ -60,36 +60,39 @@ Material:
     m_Floats:
     - _AmbientColour: 0
     - _AmbientStrength: 0.2
-    - _BaseScale: 3.1
+    - _BaseScale: 2.14
     - _BumpScale: 1
+    - _Compensation: 18.46
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DiffuseStrength: 2.45
+    - _DiffuseStrength: 4
     - _DstBlend: 0
-    - _EdgeLength: 0.02
+    - _EdgeLength: 100
     - _FirstOctaveScale: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _MapScale: 100
+    - _HeightScale: 676.1
+    - _MapScale: 8.3
     - _MaxDisplacement: 1
     - _MaxDist: 7.32
-    - _MaxDistance: 20
+    - _MaxDistance: 1000
+    - _MaxTessellation: 0
     - _Metallic: 0
     - _MinDist: 1
     - _MinDistance: 0
     - _Mode: 0
-    - _NormalStrength: 2.22
+    - _NormalStrength: 0.5
     - _OcclusionStrength: 1
-    - _OctaveAmplitudeFalloff: 1.8
+    - _OctaveAmplitudeFalloff: 0.06
     - _OctaveScaleFalloff: 0.09
-    - _OctaveUVFalloff: 2.28
-    - _Octaves: 16
+    - _OctaveUVFalloff: 0.01
+    - _Octaves: 11
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Tessellation: 100
+    - _Tessellation: 64
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
