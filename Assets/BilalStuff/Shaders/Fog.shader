@@ -25,7 +25,7 @@ Shader "Unlit/Fog"
             {
                 float4 positionCS : POSITION;
                 float2 uv : TEXCOORD0;
-                float4 positionOS : TEXCOORD1;
+                float4 vertex : TEXCOORD1;
             };
 
             struct v2f
@@ -38,8 +38,8 @@ Shader "Unlit/Fog"
             v2f vert (appdata v)
             {
                 v2f o;
-                o.positionCS = UnityObjectToClipPos(v.positionOS);
-                o.positionOS = v.positionOS;
+                o.positionCS = UnityObjectToClipPos(v.vertex);
+                o.positionOS = v.vertex;
                 o.uv = v.uv;
                 return o;
             }
@@ -52,8 +52,9 @@ Shader "Unlit/Fog"
 
             fixed4 frag (v2f i) : SV_Target
             {
-                float sceneDepth = tex2D(_CameraDepthTexture, i.uv).r * 4000;
-                float fogFactor = pow(2, -pow(sceneDepth * (1/_FogFalloff), 2))/(1/_FogStrength);
+                float sceneDepth = tex2D(_CameraDepthTexture, i.uv).r;
+                
+                float fogFactor = pow(2, -pow(sceneDepth * _FogFalloff, 2))/_FogStrength;
                 return (1 - fogFactor) * tex2D(_MainTex, i.uv) + fogFactor * _FogColour;
             }
             ENDCG

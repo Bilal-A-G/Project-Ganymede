@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,7 +11,6 @@ public class TerrainGenerator : MonoBehaviour
     [SerializeField] private int renderDistance;
     
     private List<GameObject> _instantiatedChunks;
-
     private Vector2 _chunkCenter;
 
     private void Start()
