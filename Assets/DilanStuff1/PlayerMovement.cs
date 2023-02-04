@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // how fast we want our player to move
+    //Player's speed.
     public float moveSpeed = 15f;
-    // how fast we want our player to rotate
+    //Player's rotation speed.
     public float rotateSpeed = 55f;
 
     //Variable for jumping
