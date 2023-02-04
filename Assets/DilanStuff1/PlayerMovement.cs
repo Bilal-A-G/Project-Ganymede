@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
         VerInput = Input.GetAxis("Vertical") * moveSpeed;
         HorInput = Input.GetAxis("Horizontal") * rotateSpeed;
 
-        if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && IsTouchingGround())
         {
             rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
         }
@@ -44,18 +44,14 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-
-        // store our left and right rotation
         Vector3 rotation = Vector3.up * HorInput;
-        // Quaternion vs Euler
         Quaternion angleR = Quaternion.Euler(rotation * Time.fixedDeltaTime);
 
-        rb.MovePosition(this.transform.position + this.transform.forward
-            * VerInput * Time.deltaTime);
+        rb.MovePosition(this.transform.position + this.transform.forward * VerInput * Time.deltaTime);
         rb.MoveRotation(rb.rotation * angleR);
     }
 
-    private bool IsGrounded()
+    private bool IsTouchingGround()
     {
         Vector3 capsuleBottom = new Vector3(col.bounds.center.x, col.bounds.min.y, col.bounds.center.z);
         bool touchingGround = Physics.CheckCapsule(col.bounds.center, capsuleBottom, groundDistance, grndLayer, QueryTriggerInteraction.Ignore);

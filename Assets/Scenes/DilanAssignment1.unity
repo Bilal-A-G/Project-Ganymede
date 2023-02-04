@@ -1167,6 +1167,8 @@ GameObject:
   - component: {fileID: 1198979084}
   - component: {fileID: 1198979085}
   - component: {fileID: 1198979086}
+  - component: {fileID: 1198979087}
+  - component: {fileID: 1198979088}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1326,6 +1328,35 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &1198979087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198979080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5639a3f6c7d41b4dbea8fd0c1dfdc46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_renderMaterial: {fileID: 2100000, guid: e48ae50f41eed8441842b383de9ec8ea, type: 2}
+--- !u!114 &1198979088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198979080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84b9e4839dff4ec4896fc34ec46e1424, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LUTs:
+  - {fileID: 2100000, guid: e48ae50f41eed8441842b383de9ec8ea, type: 2}
+  - {fileID: 2100000, guid: c751bdb369e10444bb6407fbd8790979, type: 2}
+  - {fileID: 2100000, guid: b48ff08615512ad4e865de2308f5dd90, type: 2}
 --- !u!1 &1206687449
 GameObject:
   m_ObjectHideFlags: 0
