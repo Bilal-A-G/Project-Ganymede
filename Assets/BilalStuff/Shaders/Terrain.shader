@@ -8,7 +8,6 @@ Shader "Custom/Terrain"
         
         _Tessellation ("Maximum Tessellation", Range(1, 64)) = 0.0
         
-        _MinDistance("Minimum Distance (Tessellation)", float) = 0.0
         _MaxDistance("Maximum Distance (Tessellation)", float) = 0.0
         
         _Octaves("Octaves", int) = 0
@@ -156,7 +155,6 @@ Shader "Custom/Terrain"
             };
 
             float _Tessellation;
-            float _MinDistance;
             float _MaxDistance;
 
             float GetEdgeFactor(TesselationControlPoints cp0, TesselationControlPoints cp1)
@@ -285,7 +283,7 @@ Shader "Custom/Terrain"
             ENDCG
         }
         Pass {
-            //Horrible code duplication here, but I'm too lazy to do it right D:
+            //Horrible code duplication here
 			Tags {
 				"LightMode" = "ShadowCaster"
 			}

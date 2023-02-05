@@ -130,17 +130,25 @@ public class CameraController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
+            lut.enabled = true;
             lut.lutType = 1;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
+            lut.enabled = true;
             lut.lutType = 2;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
+            lut.enabled = true;
             lut.lutType = 3;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            lut.enabled = false;
         }
 
         Vector2 currentMousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
