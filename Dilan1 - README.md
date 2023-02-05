@@ -1,11 +1,30 @@
 # Project-Ganymede
 
-Game overview:
-https://docs.google.com/document/d/1E0AXpjWsRaXpk56zrovzljUF3HSoY5_DIenTJfQnT5w/edit?usp=sharing
+Demo Vid: 
+https://www.youtube.com/watch?v=WS-_jDQjFjw
 
-Trello link:
-https://trello.com/invite/b/Kyh0wMxe/ATTIe25ab5bc6e0288b8d8a9e94c3967ea9aF8708D41/project-nasa-trello
+Slide Deck:
+https://docs.google.com/presentation/d/1EvMhJOyCefCWRpnjK4OlM2DszUK_RsiOIxa8WTRALPM/edit?usp=sharing
 
-Pitch:
-https://user-images.githubusercontent.com/86686062/212761354-1c6d79f2-600e-4de5-a663-4c81a34258c2.mp4
+
+Explanation: I used shader code derived from templates that were previously used in our lectures and labs
+to build a simple specular shader, a toon ramp, LUTs, as well as grain effect and normal mapping using other tools.
+I created a simple first-person platform jumping simulation. I did this since my group's final project will involve
+this type of exploration of a space-themed environment, therefore this aspect of the game is crucial. The Simple Specular
+and Toon Ramp work by having their own respective and necessary shader code classes attached to different materials,
+then they were indvidually attached to a script that toggles between them. This script is attached to the walls and platforms
+in the scene. Then the LUTs were created similarly with a standard LUT appropiate shader script for each of the 3 with their 
+own LUTs created in Photoshop to mathc different filters. The LUTs as well as the respective scripts were attached to different
+materials. Then these materials could be toggled in their own script while being attached to the camera so that we can see
+them each as soon as the game starts. Then the grain effect was made using a post processor tool that has a function
+of creating film grain with a configurable level of intensity. Then this post processor was attached to a separate child
+attached to the player. The child object has a specific layer for the film grain effect. Then the camera has a post 
+processor reference component with the same layer of the film grain. This allows the effect to happen as soon as the 
+scene starts. Lastly the normal mapping was used with an imported normal map appropriate wall texture that was attached
+in turn to a material in its normal mapping designated section. And from there the texture was attached to the walls
+and platforms, and the normal mapping can be toggled with the other shaders I've mentioned previously. These additions
+benefit the project by not only conforming to the project requirements but also demonstrate different ways of making
+our game more exciting and aesthetically appealing. 
+
+
 
