@@ -161,7 +161,7 @@ Shader "Custom/Terrain"
                 float4 p0 = mul(unity_ObjectToWorld, cp0.positionOS);
                 float4 p1 = mul(unity_ObjectToWorld, cp1.positionOS);
                 
-                float edgeDistanceToCamera = (distance(p0, _WorldSpaceCameraPos) + distance(p1, _WorldSpaceCameraPos))/2;
+                float edgeDistanceToCamera = (distance(p0, _WorldSpaceCameraPos) + distance(p1, _WorldSpaceCameraPos)) * 0.5;
                 float interpolator = edgeDistanceToCamera/_MaxDistance;
                 interpolator = clamp(interpolator, 0, 1);
 
