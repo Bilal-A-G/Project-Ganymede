@@ -31,7 +31,7 @@ public class Timer : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.R))
             {
                 Debug.Log("E");
-                SceneManager.LoadScene("KarloAssignment1");
+                SceneManager.LoadScene("Game");
             }
         }
         else if (timer > 0 && allItems.win == true)
@@ -39,7 +39,7 @@ public class Timer : MonoBehaviour
             timeText.text = $"You have won the game, press 'R' to restart";
             if (Input.GetKeyDown(KeyCode.R))
             {
-                SceneManager.LoadScene("KarloAssignment1");
+                SceneManager.LoadScene("Game");
             }
         }
     }

@@ -5,10 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/BilalAssignment.unity
-    guid: f65c9b15a104f9b44bab0d81cb5c34d2
   - enabled: 1
-    path: Assets/Scenes/DilanAssignment1.unity
-    guid: 949185a6ffe0eed459034dc620762a8a
+    path: Assets/Scenes/Game.unity
+    guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects: {}

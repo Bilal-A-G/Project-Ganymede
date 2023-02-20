@@ -20,7 +20,6 @@ Shader "Custom/Terrain"
         _Compensation("Compensation", float) = 0.0
         
         _NormalStrength("Normal Strength", float) = 0.0
-        [HideInInspector]
         _DoLighting("Do Lighting", int) = 1
     }
     SubShader

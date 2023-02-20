@@ -6,13 +6,12 @@ public class LUTSwitch : MonoBehaviour
 {
     LUTCameraFilter filter;
     public Material[] LUTs;
-    // Start is called before the first frame update
+    
     void Start()
     {
         filter = GetComponent<LUTCameraFilter>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.H))
