@@ -4,8 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
+<<<<<<< Updated upstream
   m_Scenes:
   - enabled: 1
+<<<<<<< Updated upstream
     path: Assets/Scenes/Game.unity
     guid: 99c9720ab356a0642a771bea13969a05
+=======
+    path: Assets/Scenes/DilanAssignment1.unity
+    guid: 949185a6ffe0eed459034dc620762a8a
+=======
+  m_Scenes: []
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
   m_configObjects: {}
