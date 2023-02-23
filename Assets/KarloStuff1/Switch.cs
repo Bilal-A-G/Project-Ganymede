@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Switch : MonoBehaviour
 {
-    [SerializeField] Material[] shaders = new Material[2];
+    [SerializeField] Material[] shaders = new Material[3];
     MeshRenderer render;
 
     // Start is called before the first frame update
@@ -23,6 +23,10 @@ public class Switch : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             render.material = shaders[1];
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            render.material = shaders[2];
         }
     }
 }

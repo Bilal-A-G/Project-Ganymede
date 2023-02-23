@@ -57,7 +57,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _myCube:
-        m_Texture: {fileID: 8900000, guid: 224a97eb62cc7e7408692939202c896d, type: 3}
+        m_Texture: {fileID: 8900000, guid: f51bbe20473dfc04aaf349065ec21fc1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
