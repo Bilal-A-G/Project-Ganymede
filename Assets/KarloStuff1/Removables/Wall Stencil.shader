@@ -11,8 +11,13 @@ Shader "Custom/Wall Stencil"
 
         Stencil
         {
+            // Set the stencil reference value to 1
             Ref 1
+
+            // Pass the stencil test if the reference value is not equal to the current value
             Comp notequal
+
+            // Keep the current value in the stencil buffer
             Pass keep
         }
 
