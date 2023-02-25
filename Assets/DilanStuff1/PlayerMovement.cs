@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 rotation = Vector3.up * HorInput;//This allows the player to rotate horizontally with Euler Angles and move in a forward
         Quaternion angleR = Quaternion.Euler(rotation * Time.fixedDeltaTime);                                                  //motion.
 
-        rb.MovePosition(this.transform.position + this.transform.forward * VerInput * Time.deltaTime);
+        rb.AddForce(this.transform.forward * (VerInput * Time.fixedDeltaTime * 70), ForceMode.Force);
         rb.MoveRotation(rb.rotation * angleR);
     }
 
