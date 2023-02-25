@@ -6,11 +6,13 @@ public class Switch : MonoBehaviour
 {
     [SerializeField] Material[] shaders = new Material[3];
     MeshRenderer render;
+    public bool isOn = false;
 
     // Start is called before the first frame update
     void Start()
     {
         render = GetComponent<MeshRenderer>();
+        render.material = shaders[0];
     }
 
     // Update is called once per frame
@@ -20,13 +22,19 @@ public class Switch : MonoBehaviour
         {
             render.material = shaders[0];
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             render.material = shaders[1];
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Z) && !isOn)
         {
             render.material = shaders[2];
+            isOn = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.Z) && isOn)
+        {
+            render.material = shaders[0];
+            isOn = false;
         }
     }
 }
