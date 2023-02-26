@@ -75,8 +75,8 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _VignetteIntensity: 0.5
-    - _VignetteRadius: 0.5
+    - _VignetteIntensity: 0.216
+    - _VignetteRadius: 0
     - _VignetteSize: 0.5
     - _ZWrite: 1
     m_Colors:

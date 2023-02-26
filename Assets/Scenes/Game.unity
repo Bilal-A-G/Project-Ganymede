@@ -628,7 +628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shaders:
-  - {fileID: 2100000, guid: c0059f97e2b51e74da760b531a821f19, type: 2}
+  - {fileID: 2100000, guid: 558fc2f95373ffc40887abe060b3f823, type: 2}
   - {fileID: 2100000, guid: 5aee46d3da651204fba762075d26e820, type: 2}
   - {fileID: 2100000, guid: c0059f97e2b51e74da760b531a821f19, type: 2}
   isOn: 0
@@ -2768,13 +2768,15 @@ MonoBehaviour:
   m_text: 'Press "W" and "S" to move, "A", "D" and mouse to rotate camera, "E" to
     interact with items.
 
-    Lambert/Simple diffuse toggle: "1" and "2"
+    "Z" to activate x-ray mode
 
-    LUT
-    shader activation/deactivation toggle: "7"
+    Lambert/Simple diffuse
+    toggle: "1" and "2"
 
-    3 LUT options toggle: "8", "9"
-    and "0"'
+    LUT shader activation/deactivation toggle: "H"
+
+    3
+    LUT options toggle: "J", "K" and "L"'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4321,7 +4323,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5101772888276967479}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c097a426d49d154eacd9d3cc155ffd9, type: 3}
   m_Name: 
@@ -4374,13 +4376,31 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
+      time: 0.66276455
+      value: 0.57997656
+      inSlope: 1.9463224
+      outSlope: 1.9463224
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.0797233
+      outWeight: 0.14198604
+    - serializedVersion: 3
+      time: 1.6536568
+      value: 1.2851229
+      inSlope: 1.0727546
+      outSlope: 1.0727546
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.1261411
+      outWeight: 0.18671001
+    - serializedVersion: 3
+      time: 2
+      value: 2.0053122
+      inSlope: 4.063511
+      outSlope: 4.063511
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.20360908
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
