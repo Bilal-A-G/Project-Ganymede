@@ -58,6 +58,10 @@ The animation curve lerp segment is the same as the one used in the “BallSwitc
 This would give the effect a smooth transition between the on and off states to make it look like a lens being pulled away.
 I changed the “Switch” script to make it so that when the player activates the vignette effect (which acts as a lens), it will also turn on the stencils, making it feel like a special x-ray vision ability.
 
+Link to full script:
+
+https://docs.google.com/document/d/1mgzxW6qT3UEiT1pG7sySrZmYN0gxv57q8Vyj53GF1z8/edit
+
 ### Bilal's part:
 
 Shadows - Using a shadowcaster pass to cast shadows onto other objects, and adding shadow colour onto the output colour to recieve shadows
@@ -65,3 +69,7 @@ Shadows - Using a shadowcaster pass to cast shadows onto other objects, and addi
 Outline - Extruding the mesh outwards (in a seperate pass) using it's screen space projected normals and a outline width, using culling to prevent the interior from being seen
 
 Decals - Sampling a decal texture using the base uvs scaled and translated by user defined values and then added onto the base colour
+
+## Correction
+
+In the video it is stated that Chat GPT was not used to generate any code, this is not true, it was used to generate code, however it was only used in a few sections of the shader in question
