@@ -13,7 +13,6 @@ Shader "Custom/Terrain"
         _Octaves("Octaves", int) = 0
         _OctaveAmplitudeFalloff("Octave Ampliude Falloff", float) = 0.0
         _OctaveUVFalloff("Octave UV Falloff", float) = 0.0
-        _FirstOctaveScale("First Octave Scale", float) = 0.0
         _BaseScale("Base Scale", Range(2, 5)) = 0.0
         _MapScale("Map Scale", float) = 0.0
         _HeightScale("Height Scale", float) = 0.0

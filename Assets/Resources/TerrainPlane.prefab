@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7061758532556903689}
   - component: {fileID: 6174360791302298284}
   - component: {fileID: 8235758965237788262}
+  - component: {fileID: 4943540137766176612}
   m_Layer: 0
   m_Name: TerrainPlane
   m_TagString: Untagged
@@ -83,3 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4943540137766176612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7587359572601540531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e5b7ab2dbd5e3418bafc861d7e226e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugMaterial: {fileID: 2100000, guid: 96c763178b8140f4a866e86543db0aae, type: 2}
+  terrainShader: {fileID: 2100000, guid: 44dca943dc7c56f4eb9c430f5e97f5fb, type: 2}
+  resolution: 30
+  octaves: 11
