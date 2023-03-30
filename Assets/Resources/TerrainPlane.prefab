@@ -98,5 +98,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugMaterial: {fileID: 2100000, guid: 96c763178b8140f4a866e86543db0aae, type: 2}
   terrainShader: {fileID: 2100000, guid: 44dca943dc7c56f4eb9c430f5e97f5fb, type: 2}
-  resolution: 30
-  octaves: 11
+  resolution: 10
+  octaves: 1

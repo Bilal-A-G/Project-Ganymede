@@ -579,7 +579,7 @@ MonoBehaviour:
   chunkSize: 100
   player: {fileID: 1413249638}
   chunkUpdateThreshold: 500
-  renderDistance: 1
+  renderDistance: 10
 --- !u!4 &515388962
 Transform:
   m_ObjectHideFlags: 0

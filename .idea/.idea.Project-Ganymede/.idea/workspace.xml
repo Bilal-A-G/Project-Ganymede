@@ -284,6 +284,7 @@
     <setting file="file://$PROJECT_DIR$/../../../Program Files/Unity/Hub/Editor/2021.3.9f1/Editor/Data/CGIncludes/HLSLSupport.cginc" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Program Files/Unity/Hub/Editor/2021.3.9f1/Editor/Data/CGIncludes/Tessellation.cginc" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Program Files/Unity/Hub/Editor/2021.3.9f1/Editor/Data/CGIncludes/UnityCG.cginc" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Program Files/Unity/Hub/Editor/2021.3.9f1/Editor/Data/CGIncludes/UnityInstancing.cginc" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.15/Rider/Editor/RiderScriptEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@12.1.7/ShaderLibrary/Common.hlsl" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@12.1.7/ShaderLibrary/Macros.hlsl" root0="SKIP_HIGHLIGHTING" />
@@ -369,7 +370,8 @@
       <workItem from="1675615876757" duration="136000" />
       <workItem from="1680010685205" duration="3079000" />
       <workItem from="1680015385080" duration="1131000" />
-      <workItem from="1680180034785" duration="11294000" />
+      <workItem from="1680180034785" duration="11591000" />
+      <workItem from="1680193435913" duration="3979000" />
     </task>
     <servers />
   </component>

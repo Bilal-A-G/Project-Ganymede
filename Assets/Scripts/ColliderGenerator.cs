@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -46,10 +44,13 @@ public class ColliderGenerator : MonoBehaviour
         _octaveAmplitudeFalloff = terrainShader.GetFloat("_OctaveAmplitudeFalloff");
         _compensation = terrainShader.GetFloat("_Compensation");
         _heightScale = terrainShader.GetFloat("_HeightScale");
-    }
 
-    private void Update()
-    {
+        //Temp code
+        float r = Random.Range(0.0f, 1.0f);
+        float g = Random.Range(0.0f, 1.0f);
+        float b = Random.Range(0.0f, 1.0f);
+        GetComponent<MeshRenderer>().material.SetColor("_Colour", new Color(0.1f, 0, 0));
+        
         Mesh mesh = new Mesh();
         _collisionFilter.mesh.Clear();
 
@@ -59,16 +60,15 @@ public class ColliderGenerator : MonoBehaviour
             for (int v = 0; v < resolution + 1; v++)
             {
                 Vector3 position = new Vector3(i - resolution/2, 1, v - resolution/2);
-                Vector3 scale = _collisionMesh.transform.localScale;
                 
-                Vector3 worldSpacePosition = (new Vector3(position.x * scale.x, 0, position.z * scale.z) + _collisionMesh.transform.position)/_scale;
+                Vector3 worldSpacePosition = ((Vector3)(_collisionMesh.transform.localToWorldMatrix * position) + _collisionMesh.transform.position)/_scale;
                 float displacement = 0.0f;
                 
                 for(int j = 1; j < octaves + 1; j++)
                 {
-                    Vector3 scaledPosition = worldSpacePosition * (_octaveUVFalloff * Mathf.Pow(_baseScale, i + 1));
+                    Vector3 scaledPosition = worldSpacePosition * (_octaveUVFalloff * Mathf.Pow(_baseScale, j + 1));
                     float noise = Mathf.PerlinNoise(scaledPosition.x, scaledPosition.z);
-                    displacement += noise * 1/Mathf.Pow(_baseScale, i) * _octaveAmplitudeFalloff;
+                    displacement += noise * 1/Mathf.Pow(_baseScale, j) * _octaveAmplitudeFalloff;
                 }
 
                 displacement = displacement * _heightScale - _compensation;
@@ -108,18 +108,7 @@ public class ColliderGenerator : MonoBehaviour
         _collisionFilter.mesh = mesh;
         _collider.sharedMesh = mesh;
     }
-
-    // private void OnDrawGizmos()
-    // {
-    //     for (int i = 0; i < _vertices.Count; i++)
-    //     {
-    //         Vector3 scale = _collisionMesh.transform.localScale;
-    //         Vector3 worldSpacePosition = new Vector3(_vertices[i].x * scale.x, 1, _vertices[i].z * scale.z) + 
-    //                                      _collisionMesh.transform.position;
-    //         Gizmos.DrawSphere(worldSpacePosition, 2);
-    //     }
-    // }
-
+    
     private void OnDisable()
     {
         Destroy(_collisionMesh);

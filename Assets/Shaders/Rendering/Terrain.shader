@@ -2,7 +2,6 @@ Shader "Custom/Terrain"
 {
     Properties
     {
-        _Colour ("Colour", Color) = (1,1,1,1)
         _AmbientStrength ("Ambient Strength", float) = 0.0
         _DiffuseStrength ("Diffuse Strength", float) = 0.0
         
@@ -28,14 +27,16 @@ Shader "Custom/Terrain"
         {
             Tags { "RenderType"="Opaque" }
             CGPROGRAM
-            
+
+            #include "UnityCG.cginc"
             #pragma target 5.0
             
             #pragma vertex vert
             #pragma hull hull
             #pragma domain domain
             #pragma fragment frag
-
+            #pragma multi_compile_instancing
+            
             float2 Unity_GradientNoise_Dir_float(float2 p)
             {
                 // Permutation and hashing used in webgl-nosie goo.gl/pX7HtC
@@ -109,15 +110,7 @@ Shader "Custom/Terrain"
                 float3 normal : NORMAL;
                 float4 tangent : TANGENT;
                 float2 uv : TEXCOORD0;
-            };
 
-            struct v2f
-            {
-                float3 normal : NORMAL;
-                float4 positionOS : TEXCOORD1;
-                float4 tangent : TANGENT;
-
-                float4 positionCS : SV_POSITION;
             };
             
             struct TesselationControlPoints
@@ -134,6 +127,9 @@ Shader "Custom/Terrain"
                 output.normal = mul(unity_ObjectToWorld, IN.normal);
                 output.tangent = mul(unity_ObjectToWorld, IN.tangent);
                 output.positionOS = IN.vertex;
+                UNITY_SETUP_INSTANCE_ID(IN);
+                UNITY_TRANSFER_INSTANCE_ID(IN, output);
+                
                 return output;
             }
             
@@ -233,11 +229,11 @@ Shader "Custom/Terrain"
                 return output;
             }
 
-            float4 _Colour;
             float _AmbientStrength;
             float _DiffuseStrength;
             float _NormalStrength;
             int _DoLighting;
+            float4 _Colour;
 
             float4 frag (Interpolators IN) : SV_Target
             {
