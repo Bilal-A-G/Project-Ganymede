@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WaterShader
-  m_Shader: {fileID: 4800000, guid: 1197e9cc65503034d88939b81522d7e0, type: 3}
+  m_Name: WaterMovement
+  m_Shader: {fileID: 4800000, guid: b8ce655aa91def447886b349fc8b927a, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -36,12 +36,16 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _DisplacementMap:
+        m_Texture: {fileID: 2800000, guid: ce6f7db3c2374ea4aa768900d92d4fad, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 36f32090ee23ef244be3b5e057074c8e, type: 3}
+        m_Texture: {fileID: 2800000, guid: d01865e205195924dabce5df8bd2c598, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -73,14 +77,9 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _UseColor: 0.381
-    - _WaveAmplitude: 1.51
-    - _WaveFrequency: 3.38
-    - _WaveSharpness: 2
-    - _WaveSpeed: 1.12
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0, g: 0.056763172, b: 1, a: 1}
+    - _Color: {r: 0, g: 0.11076416, b: 0.6415094, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RGBColor: {r: 0, g: 0.051581383, b: 1, a: 1}
+    - _WaveParams: {r: 0.1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
