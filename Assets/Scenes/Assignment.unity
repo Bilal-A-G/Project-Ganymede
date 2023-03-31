@@ -579,7 +579,7 @@ MonoBehaviour:
   chunkSize: 100
   player: {fileID: 1413249638}
   chunkUpdateThreshold: 500
-  renderDistance: 10
+  renderDistance: 2
 --- !u!4 &515388962
 Transform:
   m_ObjectHideFlags: 0
@@ -1004,7 +1004,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1413249635}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 104f63d3102f0a946b02cd4359e97cc3, type: 3}
   m_Name: 

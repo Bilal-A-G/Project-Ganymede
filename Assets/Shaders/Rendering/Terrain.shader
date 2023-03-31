@@ -37,28 +37,28 @@ Shader "Custom/Terrain"
             #pragma fragment frag
             #pragma multi_compile_instancing
             
-            float2 Unity_GradientNoise_Dir_float(float2 p)
-            {
-                // Permutation and hashing used in webgl-nosie goo.gl/pX7HtC
-                p = p % 289;
-                // need full precision, otherwise half overflows when p > 1
-                float x = float(34 * p.x + 1) * p.x % 289 + p.y;
-                x = (34 * x + 1) * x % 289;
-                x = frac(x / 41) * 2 - 1;
-                return normalize(float2(x - floor(x + 0.5), abs(x) - 0.5));
-            }
-            void Unity_GradientNoise_float(float2 UV, float Scale, out float Out)
-            {
-                float2 p = UV * Scale;
-                float2 ip = floor(p);
-                float2 fp = frac(p);
-                float d00 = dot(Unity_GradientNoise_Dir_float(ip), fp);
-                float d01 = dot(Unity_GradientNoise_Dir_float(ip + float2(0, 1)), fp - float2(0, 1));
-                float d10 = dot(Unity_GradientNoise_Dir_float(ip + float2(1, 0)), fp - float2(1, 0));
-                float d11 = dot(Unity_GradientNoise_Dir_float(ip + float2(1, 1)), fp - float2(1, 1));
-                fp = fp * fp * fp * (fp * (fp * 6 - 15) + 10);
-                Out = lerp(lerp(d00, d01, fp.y), lerp(d10, d11, fp.y), fp.x) + 0.5;
-            }
+            // float2 Unity_GradientNoise_Dir_float(float2 p)
+            // {
+            //     // Permutation and hashing used in webgl-nosie goo.gl/pX7HtC
+            //     p = p % 289;
+            //     // need full precision, otherwise half overflows when p > 1
+            //     float x = float(34 * p.x + 1) * p.x % 289 + p.y;
+            //     x = (34 * x + 1) * x % 289;
+            //     x = frac(x / 41) * 2 - 1;
+            //     return normalize(float2(x - floor(x + 0.5), abs(x) - 0.5));
+            // }
+            // void Unity_GradientNoise_float(float2 UV, float Scale, out float Out)
+            // {
+            //     float2 p = UV * Scale;
+            //     float2 ip = floor(p);
+            //     float2 fp = frac(p);
+            //     float d00 = dot(Unity_GradientNoise_Dir_float(ip), fp);
+            //     float d01 = dot(Unity_GradientNoise_Dir_float(ip + float2(0, 1)), fp - float2(0, 1));
+            //     float d10 = dot(Unity_GradientNoise_Dir_float(ip + float2(1, 0)), fp - float2(1, 0));
+            //     float d11 = dot(Unity_GradientNoise_Dir_float(ip + float2(1, 1)), fp - float2(1, 1));
+            //     fp = fp * fp * fp * (fp * (fp * 6 - 15) + 10);
+            //     Out = lerp(lerp(d00, d01, fp.y), lerp(d10, d11, fp.y), fp.x) + 0.5;
+            // }
             float3 SafeNormalize(float3 inVec)
             {
                 float dp3 = max(1.175494351e-38, dot(inVec, inVec));
@@ -118,6 +118,7 @@ Shader "Custom/Terrain"
                 float3 normal : NORMAL;
                 float4 tangent : TANGENT;
                 float4 positionOS : INTERNALTESSPOS;
+                float2 uv : TEXCOORD0;
             };
 
             TesselationControlPoints vert (appdata IN)
@@ -127,8 +128,7 @@ Shader "Custom/Terrain"
                 output.normal = mul(unity_ObjectToWorld, IN.normal);
                 output.tangent = mul(unity_ObjectToWorld, IN.tangent);
                 output.positionOS = IN.vertex;
-                UNITY_SETUP_INSTANCE_ID(IN);
-                UNITY_TRANSFER_INSTANCE_ID(IN, output);
+                output.uv = IN.uv;
                 
                 return output;
             }
@@ -183,6 +183,7 @@ Shader "Custom/Terrain"
                 float4 positionOS : TEXCOORD0;
                 float4 tangent : TANGENT;
                 float4 positionCS : SV_POSITION;
+                float2 uv : TEXCOORD1;
             };
             
             int _Octaves;
@@ -192,6 +193,8 @@ Shader "Custom/Terrain"
             float _MapScale;
             float _Compensation;
             float _HeightScale;
+            
+            sampler2D _HeightMap;
             
             [UNITY_domain("tri")]
             Interpolators domain(TesselationFactors factors, OutputPatch<TesselationControlPoints, 3> patch,
@@ -210,20 +213,12 @@ Shader "Custom/Terrain"
                 output.positionOS = patch[0].positionOS * barycentricCoordinates.x +
                         patch[1].positionOS * barycentricCoordinates.y +
                         patch[2].positionOS * barycentricCoordinates.z;
-                
-                float displacement = 0.0f;
-                
-                for(int i = 1; i < _Octaves + 1; i++)
-                {
-                    float noise = 0.0f;
-                    float4 worldSpaceVertex = mul(unity_ObjectToWorld, output.positionOS) /_MapScale;
-                    
-                    Unity_GradientNoise_float(float2(worldSpaceVertex.x, worldSpaceVertex.z) * _OctaveUVFalloff, pow(_BaseScale, i + 1), noise);
-                    displacement += noise * 1/pow(_BaseScale, i) * _OctaveAmplitudeFalloff;
-                }
 
-                displacement = displacement * _HeightScale - _Compensation;
+                output.uv = patch[0].uv * barycentricCoordinates.x +
+                        patch[1].uv * barycentricCoordinates.y +
+                        patch[2].uv * barycentricCoordinates.z;
                 
+                float displacement = tex2Dlod(_HeightMap, float4(output.uv, 0, 0)).r;
                 output.positionCS = UnityObjectToClipPos(output.positionOS + float4(0, displacement, 0, 0));
                 
                 return output;
@@ -247,18 +242,7 @@ Shader "Custom/Terrain"
                     float3(IN.tangent.z, wBitangent.z, IN.normal.z)
                 );
 
-                float displacement = 0.0f;
-                
-                for(int i = 1; i < _Octaves + 1; i++)
-                {
-                    float noise = 0.0f;
-                    float4 worldSpaceVertex = mul(unity_ObjectToWorld, IN.positionOS) /_MapScale;
-                    
-                    Unity_GradientNoise_float(float2(worldSpaceVertex.x, worldSpaceVertex.z) * _OctaveUVFalloff, pow(_BaseScale, i + 1), noise);
-                    displacement += noise * 1/pow(_BaseScale, i) * _OctaveAmplitudeFalloff;
-                }
-
-                displacement = displacement * _HeightScale - _Compensation;
+                float displacement = tex2D(_HeightMap, float2(IN.uv.xy)).r;
 
                 Unity_NormalFromHeight_Tangent_float(displacement,
                     _NormalStrength, IN.positionOS, tangentSpaceMatrix, newNormal);

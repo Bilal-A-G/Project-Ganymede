@@ -93,7 +93,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Tessellation: 2
+    - _Tessellation: 64
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
