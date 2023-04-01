@@ -25,6 +25,7 @@ float2 Unity_GradientNoise_Dir_float(float2 p)
     return normalize(float2(x - floor(x + 0.5), abs(x) - 0.5));
 }
 
+//Implement own simplex noise, needs to be faster than this
 void Unity_GradientNoise_float(float2 UV, float Scale, out float Out)
 {
     float2 p = UV * Scale;
@@ -42,7 +43,7 @@ void Unity_GradientNoise_float(float2 UV, float Scale, out float Out)
 void CSMain (uint3 id : SV_DispatchThreadID)
 {
     float displacement = 0.0f;
-    float2 osPosition = (id.xy - MapResolution/2.0f)/(MapResolution/2.0f);
+    float2 osPosition = (id.xy - MapResolution * 0.5f)/(MapResolution * 0.5f);
     float2 worldSpaceVertex = (float2(osPosition.x * -PlaneScale.x, osPosition.y * -PlaneScale.y) + PlanePosition.xy)/MapScale;
 
     for(int i = 1; i < Octaves + 1; i++)
@@ -52,7 +53,7 @@ void CSMain (uint3 id : SV_DispatchThreadID)
         displacement += noise * 1.0f/pow(abs(BaseScale), i) * OctaveAmplitudeFalloff;
     }
 
-    displacement = displacement * HeightScale - Compensation;
+    displacement = displacement * HeightScale;// - Compensation;
     
     HeightMap[id.xy] = float4(displacement, displacement, displacement, 0);
 }

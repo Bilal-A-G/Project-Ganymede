@@ -59,7 +59,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AmbientColour: 0
-    - _AmbientStrength: 0.2
+    - _AmbientStrength: 0.1
     - _BaseScale: 2.82
     - _BumpScale: 1
     - _Compensation: 18.46
@@ -83,7 +83,7 @@ Material:
     - _MinDist: 1
     - _MinDistance: 0
     - _Mode: 0
-    - _NormalStrength: 0.5
+    - _NormalStrength: 0.005
     - _OcclusionStrength: 1
     - _OctaveAmplitudeFalloff: 0.06
     - _OctaveScaleFalloff: 0.09
@@ -100,6 +100,6 @@ Material:
     - _AmbientColour: {r: 1, g: 1, b: 1, a: 1}
     - _AmbientStrength: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0.5849056, g: 0.15740754, b: 0.09049479, a: 1}
-    - _Colour: {r: 0.4509804, g: 0.07450981, b: 0.07450981, a: 1}
+    - _Colour: {r: 0.3773585, g: 0, b: 0.039425615, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
