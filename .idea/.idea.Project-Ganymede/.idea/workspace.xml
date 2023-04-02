@@ -281,6 +281,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../../Program Files/Unity/Hub/Editor/2021.3.9f1/Editor/Data/CGIncludes/AutoLight.cginc" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Program Files/Unity/Hub/Editor/2021.3.9f1/Editor/Data/CGIncludes/HLSLSupport.cginc" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Program Files/Unity/Hub/Editor/2021.3.9f1/Editor/Data/CGIncludes/Tessellation.cginc" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Program Files/Unity/Hub/Editor/2021.3.9f1/Editor/Data/CGIncludes/UnityCG.cginc" root0="SKIP_HIGHLIGHTING" />
@@ -378,7 +379,8 @@
       <workItem from="1680271008197" duration="1978000" />
       <workItem from="1680277051954" duration="5081000" />
       <workItem from="1680312601881" duration="576000" />
-      <workItem from="1680367042824" duration="6077000" />
+      <workItem from="1680367042824" duration="7546000" />
+      <workItem from="1680383670882" duration="5891000" />
     </task>
     <servers />
   </component>

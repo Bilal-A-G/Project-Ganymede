@@ -75,6 +75,7 @@ public class ColliderGenerator : MonoBehaviour
         heightMapCompute.Dispatch(0, heightMapSize, heightMapSize, 1);
         
         GetComponent<MeshRenderer>().material.SetTexture("_HeightMap", _heightMap);
+        GetComponent<MeshRenderer>().material.SetTexture("_HeightMapS", _heightMap);
         RenderTexture.active = _heightMap;
         _cpuTexture.ReadPixels(new Rect(0, 0, _heightMap.width,  _heightMap.height), 0, 0);
         _cpuTexture.Apply();
