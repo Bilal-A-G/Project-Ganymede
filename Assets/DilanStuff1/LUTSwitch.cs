@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class LUTSwitch : MonoBehaviour
 {
-    LUTCameraFilter filter;
+    public LUTCameraFilter filter;
+    public myDOF depthOfField;
     public Material[] LUTs;
-    
-    void Start()
-    {
-        filter = GetComponent<LUTCameraFilter>();
-    }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.H))
         {
             filter.enabled = !filter.enabled;
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            depthOfField.enabled = !depthOfField.enabled;
         }
 
         if (Input.GetKeyDown(KeyCode.J))

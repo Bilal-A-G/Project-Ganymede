@@ -23,7 +23,7 @@ public class Timer : MonoBehaviour
         if (timer > 0 && allItems.win == false)
         {
             timer -= Time.deltaTime;
-            timeText.text = $"Remaining time: {timer} \n {allItems.inventory.Count}/{allItems.maxItem} items found";
+            timeText.text = $"Remaining time: {timer} \n {allItems.inventory.Count}/{allItems.maxItems} items found";
         }
         else if (timer <= 0 && allItems.win == false)
         {

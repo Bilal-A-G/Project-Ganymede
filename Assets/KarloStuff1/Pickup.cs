@@ -4,42 +4,44 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-    FOV vision;
+    public Transform collectibles;
+    public float collectionRange;
+    
     float dist = float.PositiveInfinity;
     GameObject obj;
     public List<string> inventory;
     public bool win = false;
-    public float maxItem;
+    public int maxItems;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        vision = GetComponent<FOV>();
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        if(vision.visibleTargets.Count > 0)
+        for (int i = 0; i < collectibles.childCount; i++)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            collectibles.GetChild(i).GetComponent<BallSwitch>().shadered = 
+                Vector3.Distance(collectibles.GetChild(i).position, transform.position) <= collectionRange;
+        }
+        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            for(int i = 0; i < collectibles.childCount; i++)
             {
-                foreach (Transform item in vision.visibleTargets)
+                float temp = Vector3.Distance(collectibles.GetChild(i).position, transform.position);
+                if (temp < dist)
                 {
-                    float temp = Vector3.Distance(item.position, transform.position);
-                    if (temp < dist)
-                    {
-                        dist = temp;
-                        obj = item.gameObject;
-                    }
+                    dist = temp;
+                    obj = collectibles.GetChild(i).gameObject;
                 }
+            }
+
+            if (dist <= collectionRange)
+            {
                 inventory.Add(obj.name);
                 Destroy(obj);
             }
-            dist = float.PositiveInfinity;
         }
+        dist = float.PositiveInfinity;
 
-        if (maxItem == inventory.Count)
+        if (maxItems == inventory.Count)
         {
             win = true;
         }

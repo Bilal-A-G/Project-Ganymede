@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BallSwitch : MonoBehaviour
 {
-    FOV ballShader;
     [SerializeField] Material[] shaders = new Material[2];
     public MeshRenderer render;
 
@@ -22,34 +21,27 @@ public class BallSwitch : MonoBehaviour
     {
         render = GetComponent<MeshRenderer>();
         render.material.shader = Shader.Find("Rim Lighting");
-        ballShader = GameObject.Find("Player").GetComponent<FOV>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (ballShader.visibleTargets.Contains(transform))
-        {
-            if (!shadered)
-            {
-                render.material = shaders[1];
-                shadered = true;
-            }
-
-            time += Time.smoothDeltaTime;
-
-            float t = time / MaxTime;
-            if (t == 1.0f)
-            {
-                t = 1.0f - t;
-            }
-            value = Mathf.Lerp(min, max, curve.Evaluate(t * 2));
-            render.material.SetFloat("_RimPower", value);
-        }
-        else
+        if (!shadered)
         {
             render.material = shaders[0];
-            shadered = false;
+            return;
         }
+        
+        render.material = shaders[1];
+
+        time += Time.smoothDeltaTime;
+
+        float t = time / MaxTime;
+        if (t == 1.0f)
+        {
+            t = 1.0f - t;
+        }
+        value = Mathf.Lerp(min, max, curve.Evaluate(t * 2));
+        render.material.SetFloat("_RimPower", value);
     }
 }

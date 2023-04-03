@@ -3950,14 +3950,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88a97e9bc1b81fe48ae5d154398e5fa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 2
-  viewAngle: 60
-  targetMask:
-    serializedVersion: 2
-    m_Bits: 128
-  obstacleMask:
-    serializedVersion: 2
-    m_Bits: 64
+  pickupDistance: 20
+  collectibles: {fileID: 922344213}
   visibleTargets: []
 --- !u!114 &1678490370
 MonoBehaviour:
