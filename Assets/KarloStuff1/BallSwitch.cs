@@ -16,14 +16,12 @@ public class BallSwitch : MonoBehaviour
     public float value;
     public bool shadered = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         render = GetComponent<MeshRenderer>();
         render.material.shader = Shader.Find("Rim Lighting");
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!shadered)

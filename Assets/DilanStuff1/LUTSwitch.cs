@@ -28,9 +28,5 @@ public class LUTSwitch : MonoBehaviour
         {
             filter.m_renderMaterial = LUTs[1];
         }
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            filter.m_renderMaterial = LUTs[2];
-        }
     }
 }
