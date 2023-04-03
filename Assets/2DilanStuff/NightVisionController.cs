@@ -3,45 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
-[RequireComponent(typeof(PostProcessVolume))]
 public class NightVisionController : MonoBehaviour
 {
-    [SerializeField] private Color defaultColor;
-    [SerializeField] private Color boostedColor;
+    [SerializeField] private PostProcessVolume volume;
 
-    private bool nightVisionOn;
-    private PostProcessVolume vol;
+    private bool _nightVisionOn;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        RenderSettings.ambientLight = defaultColor;
-        vol = gameObject.GetComponent<PostProcessVolume>();
-        vol.weight = 0;
-
+        volume.weight = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.G))
         {
-            Toggler();
+            Toggle();
         }
     }
 
-    void Toggler()
+    private void Toggle()
     {
-        nightVisionOn = !nightVisionOn;
-        if (nightVisionOn)
-        {
-            RenderSettings.ambientLight = boostedColor;
-            vol.weight = 1;
-        }
-        else
-        {
-            RenderSettings.ambientLight = defaultColor;
-            vol.weight = 0;
-        }
+        _nightVisionOn = !_nightVisionOn;
+
+        volume.weight = _nightVisionOn ? 1 : 0;
     }
 }

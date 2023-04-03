@@ -83,7 +83,7 @@ Material:
     - _MinDist: 1
     - _MinDistance: 0
     - _Mode: 0
-    - _NormalStrength: 0.5
+    - _NormalStrength: 0.02
     - _OcclusionStrength: 1
     - _OctaveAmplitudeFalloff: 0.06
     - _OctaveScaleFalloff: 0.09

@@ -2,9 +2,9 @@ Shader "Custom/WaterDisplacement"
 {
     Properties{
         _MainTex("Texture", 2D) = "white" {}
-        _DisplacementMap("Displacement Map", 2D) = "white" {}
-        _WaveParams("Wave Parameters", Vector) = (0.1, 1.0, 1.0, 0.0)
+        _NormalMap("Displacement Map", 2D) = "white" {}
         _Color("Tint Color", Color) = (1, 1, 1, 1)
+        _Scale("Scale", float) = 0
     }
 
         SubShader{
@@ -26,10 +26,10 @@ Shader "Custom/WaterDisplacement"
                     float4 vertex : SV_POSITION;
                 };
 
-                float4 _WaveParams;
                 sampler2D _MainTex;
-                sampler2D _DisplacementMap;
+                sampler2D _NormalMap;
                 float4 _Color;
+                float _Scale;
 
                 v2f vert(appdata v) {
                     v2f o;
@@ -38,24 +38,19 @@ Shader "Custom/WaterDisplacement"
                     return o;
                 }
 
-                fixed4 frag(v2f i) : SV_Target {
-                    // Sample the displacement map
-                    float4 displacement = tex2D(_DisplacementMap, i.uv);
-
-                    // Calculate the wave displacement using the wave parameters
+                fixed4 frag(v2f i) : SV_Target
+                {
                     float time = _Time.y;
-                    float amplitude = _WaveParams.x;
-                    float speed = _WaveParams.y;
-                    float frequency = _WaveParams.z;
-                    float w = _WaveParams.w + time * 5;
-                    float waveDisplacement = displacement.r * amplitude * sin(2 * 3.141592 * frequency * dot(i.uv, float2(1, 1)) + w * speed);
+                    
+                    float4 normal = tex2D(_NormalMap, (i.uv + time * 0.15f) * _Scale);
+                    float4 baseColour = tex2D(_MainTex, (i.uv + time * 0.1f) * _Scale);
 
-                    // Sample the main texture
-                    float4 color = tex2D(_MainTex, i.uv + waveDisplacement);
+                    float3 lightDir = WorldSpaceLightDir(i.vertex);
+                    float diffuseStrength = dot(lightDir, normal.xyz);
 
-                    color *= _Color;
+                    baseColour += _Color * diffuseStrength;
 
-                    return color;
+                    return baseColour;
                 }
                 ENDCG
             }

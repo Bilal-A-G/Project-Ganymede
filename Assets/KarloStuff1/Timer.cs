@@ -10,20 +10,14 @@ public class Timer : MonoBehaviour
     public float timer;
     [SerializeField] TMP_Text timeText;
     Pickup allItems;
-    
-    [SerializeField] private float wallMoveSpeed;
-    [SerializeField] private Transform seperatingWall;
-    [SerializeField] private Transform seperatingWallEnd;
 
     private bool _wallMoving;
 
-    // Start is called before the first frame update
     void Start()
     {
         allItems = GetComponent<Pickup>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (timer > 0 && allItems.win == false)
@@ -42,15 +36,7 @@ public class Timer : MonoBehaviour
         }
         else if (timer > 0 && allItems.win == true)
         {
-            timeText.text = $"You have won this part of the game, press 'R' to move on";
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                _wallMoving = true;
-            }
+            timeText.text = $"You have won the game";
         }
-        
-        if(!_wallMoving) return;
-        
-        seperatingWall.position = Vector3.Lerp(seperatingWall.position, seperatingWallEnd.position, Time.deltaTime * wallMoveSpeed);
     }
 }
