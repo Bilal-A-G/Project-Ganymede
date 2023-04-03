@@ -6,6 +6,7 @@ using UnityEngine.Rendering.PostProcessing;
 public class NightVisionController : MonoBehaviour
 {
     [SerializeField] private PostProcessVolume volume;
+    [SerializeField] private float changeSpeed;
 
     private bool _nightVisionOn;
 
@@ -18,14 +19,9 @@ public class NightVisionController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.G))
         {
-            Toggle();
+            _nightVisionOn = !_nightVisionOn;
         }
-    }
-
-    private void Toggle()
-    {
-        _nightVisionOn = !_nightVisionOn;
-
-        volume.weight = _nightVisionOn ? 1 : 0;
+        
+        volume.weight = Mathf.Lerp(volume.weight, _nightVisionOn ? 1 : 0, Time.deltaTime * changeSpeed);
     }
 }

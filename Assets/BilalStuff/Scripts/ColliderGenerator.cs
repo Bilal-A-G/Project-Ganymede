@@ -43,8 +43,8 @@ public class ColliderGenerator : MonoBehaviour
         _collisionMesh.transform.localScale = new Vector3(_collisionMesh.transform.localScale.x, 1,
             _collisionMesh.transform.localScale.z);
         _collisionFilter = _collisionMesh.AddComponent<MeshFilter>();
-        _collisionMesh.AddComponent<MeshRenderer>();
         _collider = _collisionMesh.AddComponent<MeshCollider>();
+        _collisionMesh.AddComponent<MeshRenderer>();
         _collider.convex = false;
         Rigidbody rigidBody = _collisionMesh.AddComponent<Rigidbody>();
         rigidBody.isKinematic = true;
