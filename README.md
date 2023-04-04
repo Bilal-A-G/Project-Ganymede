@@ -12,11 +12,11 @@ Use your special night vision lenses using the "G" key that well help you see in
 
 ## Contributions
 
- Bilal - terrain (height mapping), decals, water, reflections
+ Bilal - terrain (height mapping), decals, reflections
  
  Karlo - windows, depth of field, LUTs, rim lighting
  
- Dilan - night vision, movement
+ Dilan - night vision, movement, water
  
  ## Slide deck
  
@@ -33,6 +33,8 @@ Night Vision - Using Unity's post processing stack, adding colour correction tha
 
 Movement - W and S to move forwards and backwards, A and D to rotate left and right, rotation can be done via mouse as well. Space to jump. 
 
+Water - Scrolling an albedo and normal map over a plane at different speeds to give a parallax effect.
+
 ### Karlo's part:
 
 Windows - Using a material for the wall that passes the stencil test only if the value is not equal to the refrence value, and a hole material that always passes the stencil test and replaces whatever was in the stencil buffer. Putting the hole over the wall material cuts a hole in the wall.
@@ -48,8 +50,6 @@ Rim Lighting - Performing the dot product between the view direction and the nor
 Terrain height mapping - Summing together several octaves of Perlin noise, each octave has an increasing frequency and decreasing amplitudes. This is done in a compute shader and sampled via a vertex and fragment shader to displace the terrain and generate normals for it.
 
 Decals - Sampling a decal texture using the base uvs scaled and translated by user defined values and then added onto the base colour.
-
-Water - Scrolling an albedo and normal map over a plane at different speeds to give a parallax effect.
 
 Reflections - Rendering a reflection probe onto a rendertexture, and then sampling the texture in a fragment shader to output as emissiveness.
 
