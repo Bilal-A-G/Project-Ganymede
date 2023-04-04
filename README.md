@@ -63,4 +63,6 @@ The lava albedo and normal maps were sourced from, https://3dtextures.me/2016/05
 
 The decal texture for the base plaque was sourced from, https://cooltext.com/Render-Image?RenderID=433055735274831&LogoId=4330557352
 
+The rusty metal textures (Albedo and Normal maps) were sourced from, https://polyhaven.com/a/rusty_metal_02
+
 
