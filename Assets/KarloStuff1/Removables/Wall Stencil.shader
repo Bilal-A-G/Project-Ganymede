@@ -3,6 +3,7 @@ Shader "Custom/Wall Stencil"
     Properties
     {
         _MainTex("Diffuse", 2D) = "white" {}
+        _NormalMap ("Normal", 2D) = "white" {}
         _Color("Color", Color) = (1,1,1,1)
     }
         SubShader
@@ -25,6 +26,7 @@ Shader "Custom/Wall Stencil"
         #pragma surface surf Lambert
 
         sampler2D _MainTex;
+        sampler2D _NormalMap;
         float4 _Color;
 
         struct Input
@@ -35,6 +37,7 @@ Shader "Custom/Wall Stencil"
         void surf(Input IN, inout SurfaceOutput o)
         {
             fixed4 c = tex2D(_MainTex, IN.uv_MainTex);
+            o.Normal = tex2D(_NormalMap, IN.uv_MainTex);
             o.Albedo = c.rgb * _Color.rgb;
         }
         ENDCG
